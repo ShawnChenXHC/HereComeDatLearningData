@@ -17,5 +17,4 @@
 * OnTask provides multiple ways of importing data: You can use their web interface to upload data manually, or you can set up automatic integration with other pre-existing platforms 
 * They also provide an API for others to build plugins from 
  
-* The biggest challenge with MOOCs is **Low completion rates** 
-* 
+* The biggest challenge with MOOCs is **Low completion rates**
