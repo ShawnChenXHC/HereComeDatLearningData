@@ -2,13 +2,36 @@
 <html ng-app="app" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Angular App</title>
+  <title>Learning Analytics Prediction App</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
   <link rel="stylesheet" href="bundle.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
 </head>
 <body>
+  <form action="/query" method="POST">
+    <label>
+      <p>Gender:</p>
+      <input name="gender" type="text" placeholder="M" required="required">
+    </label>
+    <label>
+      <p>Highest education:</p>
+      <input name="highest_education" type="text" placeholder="A Level or Equivalent" required="required">
+    </label>
+    <label>
+      <p>IMD Band:</p>
+      <input name="imd_band" type="text" placeholder="0-10%" required="required">
+    </label>
+    <label>
+      <p>Age Band:</p>
+      <input name="age_band" type="text" placeholder="0-35" required="required">
+    </label>
+    <label>
+      <p>Disability:</p>
+      <input name="disability" type="text" placeholder="N" required="required">
+    </label>
+    <input type="Submit">
+  </form>
   <app></app>
 </body>
 </html>

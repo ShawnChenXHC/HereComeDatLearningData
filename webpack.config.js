@@ -30,8 +30,8 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './src/app/app.module.js',
-    style: "./src/style/app.scss"
+    "static/app": './src/app/app.module.js',
+    "static/style": "./src/style/app.scss"
   };
 
   /**
@@ -42,7 +42,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     // Absolute output directory
-    path: __dirname + '/dist',
+    path: __dirname + '/',
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
@@ -50,11 +50,11 @@ module.exports = function makeWebpackConfig() {
 
     // Filename for entry points
     // Only adds hash in build mode
-    filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
+    filename: '[name].bundle.js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js'
+    chunkFilename: '[name].bundle.js'
   };
 
   /**
@@ -160,8 +160,7 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html#plugins
    * List: http://webpack.github.io/docs/list-of-plugins.html
    */
-  config.plugins = [
-  ];
+  config.plugins = [];
 
   // Skip rendering index.html in test mode
   if (!isTest) {
@@ -176,29 +175,22 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
+      new ExtractTextPlugin({
+        filename: 'css/[name].css',
+        disable: !isProd,
+        allChunks: true
+      })
     )
   }
 
   // Add build specific plugins
   if (isProd) {
     config.plugins.push(
-      // // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
-      // // Only emit files when there are no errors
-      // new webpack.NoErrorsPlugin(),
-
-      // // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
-      // // Dedupe modules in the output
-      // new webpack.optimize.DedupePlugin(),
-
-      // // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
-      // // Minify all javascript, switch loaders to minimizing mode
-      // new webpack.optimize.UglifyJsPlugin(),
-
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+        from: __dirname + '/src/public',
+        to: __dirname + '/static'
       }])
     )
   }
