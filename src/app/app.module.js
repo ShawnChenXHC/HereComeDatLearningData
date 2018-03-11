@@ -5,8 +5,10 @@ import "material-components-web";
 import { AppComponent } from "./app.component";
 import { AppSideNavComponent } from "./components/app-side-nav/appSideNav.component";
 import { AppShellComponent } from "./components/app-shell/app-shell.component";
+import { PredicatorComponent } from "./components/predicator/predicator.component";
 
 angular.module("app", [])
   .component("app", AppComponent)
   .component("appShell", AppShellComponent)
-  .component("appSideNav", AppSideNavComponent);
+  .component("appSideNav", AppSideNavComponent)
+  .component("predicator", PredicatorComponent);
