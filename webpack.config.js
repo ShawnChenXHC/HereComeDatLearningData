@@ -95,7 +95,7 @@ module.exports = function makeWebpackConfig() {
         {
           loader: 'file-loader',
           options: {
-            name: 'bundle.css',
+            name: 'static/bundle.css',
           },
         },
         { loader: 'extract-loader' },
@@ -168,18 +168,19 @@ module.exports = function makeWebpackConfig() {
     // Render index.html
     config.plugins.push(
       new HtmlWebpackPlugin({
+        filename: 'templates/index.html',
         template: './src/public/index.html',
         inject: 'body'
-      }),
-
-      // Reference: https://github.com/webpack/extract-text-webpack-plugin
-      // Extract css files
-      // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({
-        filename: 'css/[name].css',
-        disable: !isProd,
-        allChunks: true
       })
+
+      // // Reference: https://github.com/webpack/extract-text-webpack-plugin
+      // // Extract css files
+      // // Disabled when in test mode or not in build mode
+      // new ExtractTextPlugin({
+      //   filename: 'static/[name].css',
+      //   disable: !isProd,
+      //   allChunks: true
+      // })
     )
   }
 
