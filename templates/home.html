@@ -9,24 +9,51 @@
   <form action="/query" method="POST">
     <label>
       <p>Gender:</p>
-      <input name="gender" type="text" placeholder="M" required="required">
+      <select name="gender">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
     </label>
     <label>
       <p>Highest education:</p>
-      <input name="highest_education" type="text" placeholder="A Level or Equivalent" required="required">
+      <select name="highest_education">
+        <option value="A Level or Equivalent">A Level or Equivalent</option>
+        <option value="HE Qualification">HE Qualification</option>
+        <option value="Lower Than A Level">Lower Than A Level</option>
+        <option value="No Formal quals">No Formal quals</option>
+        <option value="Post Graduate Qualification">Post Graduate Qualification</option>
+      </select>
     </label>
     <label>
       <p>IMD Band:</p>
-      <input name="imd_band" type="text" placeholder="0-10%" required="required">
+      <select name="imd_band">
+        <option value="0-10%">0-10%</option>
+        <option value="10-20">10-20%</option>
+        <option value="20-30%">20-30%</option>
+        <option value="30-40%">30-40%</option>
+        <option value="40-50%">40-50%</option>
+        <option value="50-60%">50-60%</option>
+        <option value="60-70%">60-70%</option>
+        <option value="70-80%">70-80%</option>
+        <option value="80-90%">80-90%</option>
+        <option value="90-100%">90-100%</option>
+      </select>
     </label>
     <label>
       <p>Age Band:</p>
-      <input name="age_band" type="text" placeholder="0-35" required="required">
+      <select name="age_band">
+        <option value="0-35">0-35</option>
+        <option value="35-55">35-55</option>
+        <option value="55<=">55</option>
+      </select>
     </label>
     <label>
       <p>Disability:</p>
-      <input name="disability" type="text" placeholder="N" required="required">
+      <select name="disability">
+        <option value="N">N</option>
+        <option value="Y">Y</option>
+      </select>
     </label>
-    <input type="Submit">
+    <input type="submit">
 </body>
 </html>
